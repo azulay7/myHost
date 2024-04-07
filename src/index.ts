@@ -3,11 +3,11 @@ import express, { Request, Response } from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/api', (req: Request, res: Response) => {
   res.send('Hello, Express server with TypeScript!');
 });
 
-app.get('/appleLogin', (req: Request, res: Response) => {
+app.get('/api/appleLogin', (req: Request, res: Response) => {
     res.send('appleLogin');
   });
 
