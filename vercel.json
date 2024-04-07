@@ -1,16 +1,10 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "dist/index.js",
-            "use": "@vercel/node",
-            "config": { "includeFiles": ["dist/**"] }
-        }
+      { "src": "src/index.ts", "use": "@now/node", "config": { "maxLambdaSize": "15mb" } }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "dist/index.js"
-        }
+      { "src": "/static/(.*)", "dest": "/public/$1" },
+      { "src": "/(.*)", "dest": "/src/index.ts" }
     ]
-}
+  }
